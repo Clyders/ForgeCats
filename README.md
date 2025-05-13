@@ -1,25 +1,11 @@
-# ForgeTopGG
-Automatically post your bot stats and receive vote events from the site.
+# ForgeCats
 
-> To receive vote events, you must set your webhook url in the settings of your bot/server on Top.gg to the ip/domain of your bot host + the port it's listening to, which by default is `3000` and `/dblwebhook` at the end.
+> ForgeCats, the best way to meow with your ForgeScript bot.
 
 ## Example (JavaScript)
 ```ts
-const { ForgeTopGG } = require("@tryfroge/forge.topgg");
+const { ForgeCats } = require("@tryfroge/forge.cats");
 const { ForgeClient } = require("@tryforge/forgescript");
-
-const top = new ForgeTopGG({
-    token: "top.gg token",
-    auth: "top.gg authorization value for webhooks",
-    events: [
-        "error",
-        "posted",
-        "voted"
-    ],
-    post: {
-        interval: 3_600_000 // Update bot stats every hour
-    }
-})
 
 const client = new ForgeClient({
     intents: [
@@ -32,23 +18,8 @@ const client = new ForgeClient({
     useInviteSystem: true,
     prefixes: ["!", "<@$botID>"],
     extensions: [
-        top
+        new ForgeCats()
     ],
-})
-
-top.commands.add({
-    type: "error",
-    code: `$log[Error $postStatsError]`
-})
-
-top.commands.add({
-    type: "posted",
-    code: `$log[posted!]`
-})
-
-top.commands.add({
-    type: "voted",
-    code: `$log[voted by $voteUserID]`
 })
 
 client.login("bot token")
