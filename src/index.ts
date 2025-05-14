@@ -7,8 +7,6 @@ export class ForgeCats extends ForgeExtension {
   version: string = require("../package.json").version;
 
   init(client: ForgeClient): void {
-    client.once("ready", (cli) => {
-      this.init(cli as ForgeClient);
-    });
+    this.load(__dirname + "/functions");
   }
 }
