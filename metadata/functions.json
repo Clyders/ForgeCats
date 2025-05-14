@@ -1,1 +1,1 @@
-[{"name":"$meow","version":"1.0.0","description":"Sends meow!","unwrap":true,"args":[{"name":"index","description":"The index to add this data to","rest":false,"type":"Number"}],"brackets":true}]
+[{"name":"$meow","version":"1.0.0","description":"Sends meow!","unwrap":false}]
