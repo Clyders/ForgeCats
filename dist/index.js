@@ -7,13 +7,10 @@ class ForgeCats extends forgescript_1.ForgeExtension {
     description = "ForgeCats, the best way to meow with your ForgeScript bot.";
     version = require("../package.json").version;
     init(client) {
-        ;
         client.once("ready", (cli) => {
             this.init(cli);
         });
     }
-    ;
 }
 exports.ForgeCats = ForgeCats;
-;
 //# sourceMappingURL=index.js.map

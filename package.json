@@ -5,20 +5,19 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "prepublishOnly": "tsc",
-    "docgen": "tsc && node dist/docgen",
-    "test": "tsc && node dist/__tests__/runner"
+    "build": "prettier src -w && tsc",
+    "docs": "tsc && typedoc src/index.ts && node dist/docgen"
   },
   "keywords": [
-    "topgg",
-    "top.gg",
+    "cats",
+    "cat",
     "forgescript",
     "fs",
-    "sdk",
-    "api",
-    "webhook"
+    "meow",
+    "tryforge",
+    "meowscript"
   ],
-  "author": "ruben40000",
+  "author": "Clyders",
   "license": "GPL-3.0",
   "dependencies": {
     "tiny-typed-emitter": "^2.1.0"
